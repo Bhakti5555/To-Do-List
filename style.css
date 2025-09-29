@@ -1,0 +1,332 @@
+:root {
+  --gradient: linear-gradient(180deg, rgba(45, 112, 253, 0.73) 0%, #163e92 100%);
+  --dark: #001747;
+  --grey: #b1bacb;
+  --grey-border: rgba(210, 210, 210, 0.75);
+  --grey-light: #eeeeee;
+  --grey-dark: #405175;
+  --blue: #2d70fd;
+  --green: #00d8a7;
+  --white: #ffffff;
+}
+
+body {
+  background: var(--gradient);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Modal overlay for background blur */
+body.modal-open::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.btn {
+  color: var(--white);
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.3rem;
+  background-color: var(--blue);
+  border: none;
+  position: static;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.about-btn {
+  color: var(--blue);
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.3rem;
+  background-color: var(--white);
+  border: none;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  cursor: pointer;
+  transition: .2s;
+}
+.about-btn:hover{
+  background-color: #2d70fd;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.todo-heading {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+
+/* Todo Container */
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 2rem;
+  background: var(--white);
+  padding: 3rem;
+  height: 50%;
+  width: 60%;
+  box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
+  max-width: 30rem;
+  transition: all 0.3s ease;
+}
+
+/* Initially, only the header is visible */
+.todo > .todo-content {
+  display: none;
+}
+
+.todo-header {
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 3rem;
+  color: #2d70fd;
+  text-align: center;
+}
+
+/* Partial fullscreen expanded view */
+.todo.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  padding: 2rem;
+  z-index: 1001;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  /* Optional: Adjust background if needed */
+  background: var(--white);
+}
+
+/* Show content when expanded */
+.todo.expanded > .todo-content {
+  display: block;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  align-items: center; /* Ensures button aligns with input */
+  gap: 0.5rem; /* Adds spacing between input and button */
+}
+
+.input-field {
+  width: 100%;
+  border: 0.06rem solid #d2d2d2bf;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: var(--grey);
+}
+
+.todo-container {
+  display: flex;
+  gap: 1rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.3rem;
+}
+
+#todoList1 p,
+#todoList2 p,
+#todoList3 p {
+  display: flex;
+  gap: 1rem;
+  color: var(--dark);
+  align-items: center;
+}
+
+#todoList1 .disabled,
+#todoList2 .disabled,
+#todoList3 .disabled {
+  color: #8f98a8;
+}
+
+.disabled {
+  display: flex;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: "\2713";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.7rem;
+  text-align: center;
+  border: 0.06rem solid var(--grey-border);
+  border-radius: 50%;
+  color: var(--grey-border);
+}
+
+input[type="checkbox"]:checked::before {
+  color: var(--white);
+  background-color: var(--green);
+  border: 0.06rem solid var(--green);
+  border-radius: 50%;
+}
+
+.counter {
+  border: 0.06rem solid var(--grey-light);
+}
+
+.counter-container {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--grey);
+}
+
+.counter-container p {
+  align-self: center;
+}
+
+.counter-container button {
+  border: none;
+  background-color: transparent;
+  color: var(--grey);
+  font-size: 1rem;
+}
+
+.about-project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.about-project-container:hover{
+  background-color: #1b50c0 !important;
+}
+
+.about-project-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.about-project-btn:hover {
+  background-color: #1b50c0;
+}
+
+/* Additional styles for horizontal layout */
+.todo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Increase the width of each list so they occupy more horizontal space */
+.todo {
+  flex: 1;
+  max-width: 40%;
+}
+
+.todo-header.active {
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px; /* Added some padding for spacing */
+  position: fixed; /* Fixes the position to prevent scrolling */
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #d9f0ff;  
+  z-index: 1000;
+}
+
+.date-box, .reminder-box {
+  background: var(--gradient);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 180px;
+  text-align: center;
+}
+
+/* Adjusting placement */
+.date-box {
+  margin-left:0.5px;
+}
+
+.reminder-box {
+  margin-right: 50px;
+}

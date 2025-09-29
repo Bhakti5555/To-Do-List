@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Todo</title>
+  </head>
+  <body>
+    <h1 class="todo-heading">To-Do List :</h1>
+
+    <div class="todo-wrapper">
+      <!-- Personal Tasks To-do List -->
+      <section class="todo" id="personal">
+        <h2 class="todo-header">Personal Tasks</h2>
+        <div class="todo-content">
+          <div class="input">
+            <input
+              type="text"
+              class="input-field"
+              id="todoInput1"
+              placeholder="Add a new todo"
+            />
+            <button class="btn" id="addButton1">Add</button>
+          </div>
+          <ul class="scroll">
+            <li id="todoList1"></li>
+          </ul>
+          <div>
+            <hr class="counter" />
+            <div class="counter-container">
+              <p><span id="todoCount1">0</span> items total</p>
+              <button id="deleteButton1">Delete All</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Study Goals To-do List -->
+      <section class="todo" id="study">
+        <h2 class="todo-header">Study Goals</h2>
+        <div class="todo-content">
+          <div class="input">
+            <input
+              type="text"
+              class="input-field"
+              id="todoInput2"
+              placeholder="Add a new todo"
+            />
+            <button class="btn" id="addButton2">Add</button>
+          </div>
+          <ul class="scroll">
+            <li id="todoList2"></li>
+          </ul>
+          <div>
+            <hr class="counter" />
+            <div class="counter-container">
+              <p><span id="todoCount2">0</span> items total</p>
+              <button id="deleteButton2">Delete All</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Assignment Tracker To-do List -->
+      <section class="todo" id="assignment">
+        <h2 class="todo-header">Assignment Tracker</h2>
+        <div class="todo-content">
+          <div class="input">
+            <input
+              type="text"
+              class="input-field"
+              id="todoInput3"
+              placeholder="Add a new todo"
+            />
+            <button class="btn" id="addButton3">Add</button>
+          </div>
+          <ul class="scroll">
+            <li id="todoList3"></li>
+          </ul>
+          <div>
+            <hr class="counter" />
+            <div class="counter-container">
+              <p><span id="todoCount3">0</span> items total</p>
+              <button id="deleteButton3">Delete All</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer">
+        <button class="about-btn" onclick="location.href='about.html'">
+          About the Project
+        </button>
+      </div>
+
+      <div class="top-container">
+        <div class="date-box">
+            <p id="current-date"></p>
+        </div>
+        <div class="reminder-box">
+            <p id="reminder-text">No pending tasks!</p>
+        </div>
+    </div>
+    
+
+    </footer>
+  </body>
+</html>

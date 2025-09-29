@@ -1,0 +1,58 @@
+/* About Page Styling */
+.about-container {
+    max-width: 600px;
+    margin: 50px auto; /* Centers it horizontally */
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Background for the whole page */
+body {
+    background-color: #d9f0ff; /* Light Blue */ 
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Heading Styling */
+.about-container h1 {
+    font-size: 28px;
+    color: #0077cc;
+    margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+/* Team Names Styling */
+.team {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+/* Back Button */
+.back-button {
+    display: block; /* Make it a block element */
+    width: fit-content; /* Only as wide as necessary */
+    margin: 30px auto; /* Center it horizontally */
+    padding: 12px 24px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background-color: #005fa3;
+}
